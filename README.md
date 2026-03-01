@@ -5,47 +5,45 @@ Fuente de datos: [CoinGecko API](https://www.coingecko.com/en/api) (pública, si
 
 ---
 
-## 📋 Descripción
+## ¿Qué hace el proyecto?
 
-El script extrae las **top 100 criptomonedas por capitalización de mercado** desde CoinGecko,
-las almacena en una base de datos SQLite y genera dos archivos de evidencia:
+El script `src/ingestion.py` ejecuta 4 pasos en orden:
 
-| Archivo | Ruta | Descripción |
-|---|---|---|
-| Base de datos | `src/db/ingestion.db` | Tabla `coins` con métricas de mercado |
-| Muestra CSV | `src/xlsx/muestra.csv` | Top 20 monedas exportadas con Pandas |
-| Auditoría | `src/static/auditoria/ingestion.txt` | Comparación API vs BD |
+1. **Llama a CoinGecko API** y descarga las top 100 criptomonedas (Bitcoin, Ethereum, etc.) con sus métricas de mercado.
+2. **Guarda todo en SQLite** (`src/db/ingestion.db`) en una tabla llamada `coins`. Si ya existe un registro, lo actualiza con los precios más recientes.
+3. **Genera un CSV** (`src/xlsx/muestra.csv`) con las primeras 20 monedas ordenadas por ranking de mercado.
+4. **Genera un reporte de auditoría** (`src/static/auditoria/ingestion.txt`) que compara cuántos registros trajo el API vs cuántos quedaron en la BD.
 
 ---
 
-## 🗂 Estructura del proyecto
+## Estructura del proyecto
 
 ```
-nombre_apellido/
+meza_bayron/
 ├── setup.py
 ├── README.md
 ├── .github/
 │   └── workflows/
-│       └── bigdata.yml          ← GitHub Actions
+│       └── bigdata.yml          ← GitHub Actions (automatización)
 └── src/
     ├── ingestion.py             ← Script principal
-    ├── static/
-    │   └── auditoria/
-    │       └── ingestion.txt
     ├── db/
-    │   └── ingestion.db
-    └── xlsx/
-        └── muestra.csv
+    │   └── ingestion.db         ← Base de datos SQLite
+    ├── xlsx/
+    │   └── muestra.csv          ← Muestra top 20 monedas
+    └── static/
+        └── auditoria/
+            └── ingestion.txt    ← Reporte de auditoría
 ```
 
 ---
 
-## ⚙️ Instalación y ejecución local
+## Instalación y ejecución local
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/<tu-usuario>/<nombre-repo>.git
-cd <nombre-repo>
+git clone https://github.com/BayronMgDev/Datos-desde-un-API.git
+cd Datos-desde-un-API
 ```
 
 ### 2. Crear entorno virtual e instalar dependencias
@@ -64,37 +62,34 @@ Al terminar encontrarás los tres archivos de evidencia en sus respectivas carpe
 
 ---
 
-## 🤖 Automatización con GitHub Actions
+## Esquema de la base de datos
 
-El workflow `.github/workflows/bigdata.yml` se ejecuta:
+### Tabla `coins`
 
-- **En cada push** a la rama `main`
-- **Diariamente a las 06:00 UTC** (cron schedule)
-- **Manualmente** desde la pestaña *Actions* → *Run workflow*
+| Columna | Tipo | Qué significa | Ejemplo |
+|---|---|---|---|
+| **id** | TEXT (PK) | Identificador único de la moneda en CoinGecko | `bitcoin`, `ethereum` |
+| **symbol** | TEXT | Abreviatura de la moneda | `btc`, `eth` |
+| **name** | TEXT | Nombre completo de la moneda | `Bitcoin`, `Ethereum` |
+| **current_price** | REAL | Precio actual en dólares (USD) | `83500.00` |
+| **market_cap** | REAL | Capitalización = precio × monedas en circulación | `1,650,000,000,000` |
+| **market_cap_rank** | INTEGER | Posición en el ranking mundial por capitalización | `1` = Bitcoin |
+| **total_volume** | REAL | Dinero total negociado en las últimas 24 horas | `45,000,000,000` |
+| **high_24h** | REAL | Precio más alto en las últimas 24h | `84,200.00` |
+| **low_24h** | REAL | Precio más bajo en las últimas 24h | `81,900.00` |
+| **price_change_24h** | REAL | Cambio de precio en dólares en 24h | `+1,200.00` |
+| **price_change_pct_24h** | REAL | Cambio de precio en porcentaje en 24h | `+1.45` |
+| **circulating_supply** | REAL | Cantidad de monedas en circulación actualmente | `19,600,000` |
+| **total_supply** | REAL | Cantidad máxima de monedas que existirán | `21,000,000` |
+| **ath** | REAL | All Time High: precio histórico más alto | `108,786.00` |
+| **last_updated** | TEXT | Fecha/hora en que CoinGecko actualizó el dato | `2026-03-01T10:00:00Z` |
+| **ingested_at** | TEXT | Fecha/hora en que el script guardó el registro | `2026-03-01T06:00:00Z` |
 
-### Pasos del workflow
+> **Diferencia clave:** `last_updated` es cuándo CoinGecko actualizó el precio. `ingested_at` es cuándo nuestro script lo descargó y guardó. Esto permite auditar el retraso entre la fuente y la base de datos.
 
-1. Checkout del repositorio
-2. Configurar Python 3.11
-3. Instalar dependencias (`requests`, `pandas`, `openpyxl`)
-4. Ejecutar `src/ingestion.py`
-5. Verificar existencia y contenido de los archivos generados
-6. Publicar los archivos como **artefactos descargables** (30 días de retención)
-7. Hacer commit automático de los archivos actualizados al repositorio
-
-### Verificar la ejecución
-
-1. Ve a la pestaña **Actions** de tu repositorio.
-2. Selecciona el workflow *BigData - Ingesta CoinGecko*.
-3. Abre el último run y revisa los logs de cada step.
-4. Descarga los artefactos desde la sección *Artifacts* al final del run.
-
----
-
-## 🗄️ Esquema de la base de datos
-
+### Sentencia SQL de creación
 ```sql
-CREATE TABLE coins (
+CREATE TABLE IF NOT EXISTS coins (
     id                   TEXT PRIMARY KEY,
     symbol               TEXT,
     name                 TEXT,
@@ -116,11 +111,68 @@ CREATE TABLE coins (
 
 ---
 
-## 📦 Dependencias
+## Cómo ver la base de datos
+
+Online (sin instalar nada) 
+1. Descarga `ingestion.db` desde GitHub: `src/db/ingestion.db` → **Download raw file**
+2. Entra a **https://sqliteviewer.app**
+3. Arrastra el archivo `ingestion.db` a la página
+4. Selecciona la tabla `coins` y verás los 100 registros
+
+
+---
+
+## Cómo descargar las evidencias
+
+### Desde GitHub Actions (artefactos)
+1. Ve a la pestaña **Actions** del repositorio
+2. Haz clic en el último run exitoso
+3. Baja hasta la sección **Artifacts**
+4. Descarga el ZIP `evidencias-ingesta-N`
+
+El ZIP contiene:
+- `ingestion.db` — base de datos SQLite
+- `muestra.csv` — top 20 monedas (abrir con Excel)
+- `ingestion.txt` — reporte de auditoría
+
+### Desde el repositorio directamente
+Navega a cada archivo en la pestaña **Code** y haz clic en **Download raw file**.
+
+---
+
+## Automatización con GitHub Actions
+
+El workflow `.github/workflows/bigdata.yml` se ejecuta:
+
+- **En cada push** a la rama `master`
+- **Diariamente a las 06:00 UTC** (cron schedule)
+- **Manualmente** desde Actions → **Run workflow**
+
+### Pasos del workflow
+
+| Paso | Descripción |
+|---|---|
+| Checkout código | Descarga el repositorio |
+| Configurar Python 3.11 | Prepara el entorno |
+| Instalar dependencias | Instala requests, pandas, openpyxl |
+| Ejecutar ingestion.py | Corre el script completo |
+| Verificar archivos | Confirma que se generaron los 3 archivos |
+| Publicar artefactos | Guarda los archivos como descargables (30 días) |
+| Commit automático | Sube los archivos actualizados al repositorio |
+
+### Verificar una ejecución
+1. Ve a la pestaña **Actions**
+2. Selecciona el workflow *BigData - Ingesta CoinGecko*
+3. Abre cualquier run y revisa los logs de cada paso
+4. Descarga los artefactos al final del run
+
+---
+
+## Dependencias
 
 | Librería | Uso |
 |---|---|
 | `requests` | Conexión HTTP a la API de CoinGecko |
 | `sqlite3` | Almacenamiento local (incluida en Python) |
-| `pandas` | Generación del CSV de muestra y auditoría |
-| `openpyxl` | Soporte Excel (opcional) |
+| `pandas` | Generación del CSV de muestra y lectura para auditoría |
+| `openpyxl` | Soporte formato Excel (opcional) |
