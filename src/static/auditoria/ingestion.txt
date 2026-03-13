@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-03-12 07:03:05
+Fecha/Hora UTC  : 2026-03-13 07:01:26
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 5
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : janus-henderson-anemoy-aaa-clo-fund, kite-2, virtual-protocol, pippin, blockstack
+  ⚠️  IDs solo en BD  : decred, kite-2, janus-henderson-anemoy-aaa-clo-fund, pippin, just
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
