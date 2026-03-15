@@ -28,9 +28,9 @@ meza_bayron/
     ├── cleaning.py               ← EA2: limpieza con PySpark + Pandas
     ├── db/
     │   └── ingestion.db          ← Base de datos SQLite
-    ├── xlsx/
+    ├── csv/
     │   ├── muestra.csv           ← EA1: top 20 monedas crudas
-    │   └── cleaned_data.xlsx     ← EA2: datos limpios completos
+    │   └── cleaned_data.csv     ← EA2: datos limpios completos
     └── static/
         └── auditoria/
             ├── ingestion.txt     ← EA1: reporte de auditoría ingesta
@@ -49,7 +49,7 @@ cd Datos-desde-un-API
 
 ### 2. Instalar dependencias
 ```bash
-pip install requests pandas openpyxl pyspark
+pip install requests pandas — pyspark
 ```
 > PySpark requiere tener **Java 11 o 17** instalado. Descárgalo en https://adoptium.net
 
@@ -71,7 +71,7 @@ El script `src/ingestion.py` ejecuta 4 pasos:
 
 1. **Llama a CoinGecko API** y descarga las top 100 criptomonedas con sus métricas.
 2. **Guarda en SQLite** (`src/db/ingestion.db`) en la tabla `coins`.
-3. **Genera un CSV** (`src/xlsx/muestra.csv`) con las primeras 20 monedas.
+3. **Genera un CSV** (`src/csv/muestra.csv`) con las primeras 20 monedas.
 4. **Genera auditoría** (`src/static/auditoria/ingestion.txt`) comparando API vs BD.
 
 ---
@@ -89,7 +89,7 @@ El script `src/cleaning.py` simula un entorno Big Data en la nube usando **PySpa
    - Eliminación de registros con precio ≤ 0
    - Normalización de `price_change_pct_24h` a 4 decimales
    - Nueva columna `tier` (Top 10 / Top 50 / Top 100)
-4. **Exporta** el DataFrame limpio a `src/xlsx/cleaned_data.xlsx`.
+4. **Exporta** el DataFrame limpio a `src/csv/cleaned_data.csv`.
 5. **Genera reporte** `src/static/auditoria/cleaning_report.txt` con estadísticas antes/después.
 
 ---
@@ -126,7 +126,7 @@ El script `src/cleaning.py` simula un entorno Big Data en la nube usando **PySpa
 2. Entra a 👉 **https://sqliteviewer.app** y arrastra el archivo
 
 ### Excel limpio
-- Descarga `src/xlsx/cleaned_data.xlsx` y ábrelo con Excel o Google Sheets
+- Descarga `src/csv/cleaned_data.csv` y ábrelo con Excel o Google Sheets
 
 ### Reportes de auditoría
 - `src/static/auditoria/ingestion.txt` — auditoría de ingesta (EA1)
@@ -147,7 +147,7 @@ El workflow `.github/workflows/bigdata.yml` se ejecuta:
 | Paso | Etapa | Descripción |
 |---|---|---|
 | Checkout + Python | Ambas | Configura el entorno |
-| Instalar dependencias EA1 | EA1 | requests, pandas, openpyxl |
+| Instalar dependencias EA1 | EA1 | requests, pandas, — |
 | Ejecutar ingestion.py | EA1 | Extrae datos y llena la BD |
 | Instalar Java + PySpark | EA2 | Prepara entorno Spark |
 | Ejecutar cleaning.py | EA2 | Limpia y transforma los datos |
@@ -164,4 +164,4 @@ El workflow `.github/workflows/bigdata.yml` se ejecuta:
 | `sqlite3` | Almacenamiento local (incluida en Python) |
 | `pandas` | Exportación CSV/Excel y auditoría |
 | `pyspark` | Procesamiento distribuido (simula entorno cloud) |
-| `openpyxl` | Soporte formato Excel |
+| `—` | Soporte formato Excel |
