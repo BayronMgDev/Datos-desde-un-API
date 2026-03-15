@@ -124,8 +124,7 @@ def clean_data(sdf):
     sdf = sdf.fillna(fill_map)
 
     #   - Textos: reemplazar nulos con 'unknown'
-    sdf = sdf.fillna({"symbol": "UNKNOWN", "name": "Unknown",
-                      "id": "unknown", "last_updated": None, "ingested_at": None})
+    sdf = sdf.fillna({"symbol": "UNKNOWN", "name": "Unknown", "id": "unknown"})
 
     nulls_after = sum(sdf.filter(F.col(c).isNull()).count() for c in numeric_cols)
     ops.append(f"Nulos numéricos imputados      : con mediana de cada columna")
