@@ -18,7 +18,7 @@ from pyspark.sql.types import DoubleType, IntegerType, StringType, TimestampType
 # ── Rutas ─────────────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 DB_PATH     = os.path.join(BASE_DIR, "db", "ingestion.db")
-XLSX_PATH   = os.path.join(BASE_DIR, "xlsx", "cleaned_data.xlsx")
+XLSX_PATH   = os.path.join(BASE_DIR, "xlsx", "cleaned_data.csv")
 REPORT_PATH = os.path.join(BASE_DIR, "static", "auditoria", "cleaning_report.txt")
 
 os.makedirs(os.path.dirname(XLSX_PATH),   exist_ok=True)
@@ -159,7 +159,7 @@ def clean_data(sdf):
 def export_excel(sdf):
     print("\n[EXPORT] Generando cleaned_data.xlsx...")
     pdf = sdf.orderBy("market_cap_rank").toPandas()
-    pdf.to_excel(XLSX_PATH, index=False, engine="openpyxl")
+    pdf.to_csv(XLSX_PATH, index=False, encoding="utf-8")
     print(f"[EXPORT] Archivo guardado: {XLSX_PATH} ({len(pdf)} registros)")
     return pdf
 
