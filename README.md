@@ -1,41 +1,40 @@
-# EA1 — Ingestión de Datos desde un API
+# Proyecto Integrador Big Data — EA1 + EA2
 
-Proyecto integrador de **Big Data** — Etapa 1: Ingesta.  
+Repositorio del proyecto integrador de **Big Data**.  
 Fuente de datos: [CoinGecko API](https://www.coingecko.com/en/api) (pública, sin API key).
 
 ---
 
-## 📋 Descripción
+## 📦 Etapas del proyecto
 
-El script extrae las **top 100 criptomonedas por capitalización de mercado** desde CoinGecko,
-las almacena en una base de datos SQLite y genera dos archivos de evidencia:
-
-| Archivo | Ruta | Descripción |
+| Etapa | Descripción | Script |
 |---|---|---|
-| Base de datos | `src/db/ingestion.db` | Tabla `coins` con métricas de mercado |
-| Muestra CSV | `src/xlsx/muestra.csv` | Top 20 monedas exportadas con Pandas |
-| Auditoría | `src/static/auditoria/ingestion.txt` | Comparación API vs BD |
+| **EA1** | Ingestión de datos desde API | `src/ingestion.py` |
+| **EA2** | Preprocesamiento y limpieza | `src/cleaning.py` |
 
 ---
 
 ## 🗂 Estructura del proyecto
 
 ```
-nombre_apellido/
+meza_bayron/
 ├── setup.py
 ├── README.md
 ├── .github/
 │   └── workflows/
-│       └── bigdata.yml          ← GitHub Actions
+│       └── bigdata.yml           ← GitHub Actions (EA1 + EA2)
 └── src/
-    ├── ingestion.py             ← Script principal
-    ├── static/
-    │   └── auditoria/
-    │       └── ingestion.txt
+    ├── ingestion.py              ← EA1: extracción desde API
+    ├── cleaning.py               ← EA2: limpieza con PySpark + Pandas
     ├── db/
-    │   └── ingestion.db
-    └── xlsx/
-        └── muestra.csv
+    │   └── ingestion.db          ← Base de datos SQLite
+    ├── xlsx/
+    │   ├── muestra.csv           ← EA1: top 20 monedas crudas
+    │   └── cleaned_data.xlsx     ← EA2: datos limpios completos
+    └── static/
+        └── auditoria/
+            ├── ingestion.txt     ← EA1: reporte de auditoría ingesta
+            └── cleaning_report.txt ← EA2: reporte de limpieza
 ```
 
 ---
@@ -44,23 +43,94 @@ nombre_apellido/
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/<tu-usuario>/<nombre-repo>.git
-cd <nombre-repo>
+git clone https://github.com/BayronMgDev/Datos-desde-un-API.git
+cd Datos-desde-un-API
 ```
 
-### 2. Crear entorno virtual e instalar dependencias
+### 2. Instalar dependencias
 ```bash
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install requests pandas openpyxl
+pip install requests pandas openpyxl pyspark
 ```
+> PySpark requiere tener **Java 11 o 17** instalado. Descárgalo en https://adoptium.net
 
-### 3. Ejecutar el script
+### 3. Ejecutar EA1 (ingesta)
 ```bash
 python src/ingestion.py
 ```
 
-Al terminar encontrarás los tres archivos de evidencia en sus respectivas carpetas.
+### 4. Ejecutar EA2 (limpieza)
+```bash
+python src/cleaning.py
+```
+
+---
+
+## EA1 — Ingestión de Datos
+
+El script `src/ingestion.py` ejecuta 4 pasos:
+
+1. **Llama a CoinGecko API** y descarga las top 100 criptomonedas con sus métricas.
+2. **Guarda en SQLite** (`src/db/ingestion.db`) en la tabla `coins`.
+3. **Genera un CSV** (`src/xlsx/muestra.csv`) con las primeras 20 monedas.
+4. **Genera auditoría** (`src/static/auditoria/ingestion.txt`) comparando API vs BD.
+
+---
+
+## EA2 — Preprocesamiento y Limpieza
+
+El script `src/cleaning.py` simula un entorno Big Data en la nube usando **PySpark en modo local** y ejecuta:
+
+1. **Carga los datos** desde `ingestion.db` (simula almacenamiento cloud).
+2. **Análisis exploratorio** con PySpark: detecta duplicados, nulos e inconsistencias.
+3. **Limpieza y transformación:**
+   - Eliminación de duplicados por `id`
+   - Corrección de tipos de datos (cast numéricos, fechas a timestamp, símbolos a mayúsculas)
+   - Imputación de nulos numéricos con la mediana de cada columna
+   - Eliminación de registros con precio ≤ 0
+   - Normalización de `price_change_pct_24h` a 4 decimales
+   - Nueva columna `tier` (Top 10 / Top 50 / Top 100)
+4. **Exporta** el DataFrame limpio a `src/xlsx/cleaned_data.xlsx`.
+5. **Genera reporte** `src/static/auditoria/cleaning_report.txt` con estadísticas antes/después.
+
+---
+
+## 🗄️ Esquema de la base de datos — Tabla `coins`
+
+| Columna | Tipo | Qué significa | Ejemplo |
+|---|---|---|---|
+| **id** | TEXT (PK) | Identificador único en CoinGecko | `bitcoin` |
+| **symbol** | TEXT | Abreviatura (en mayúsculas tras limpieza) | `BTC` |
+| **name** | TEXT | Nombre completo | `Bitcoin` |
+| **current_price** | REAL | Precio actual en USD | `83500.00` |
+| **market_cap** | REAL | Capitalización de mercado | `1,650,000,000,000` |
+| **market_cap_rank** | INTEGER | Ranking mundial por capitalización | `1` |
+| **total_volume** | REAL | Volumen negociado en 24h | `45,000,000,000` |
+| **high_24h** | REAL | Precio más alto en las últimas 24h | `84,200.00` |
+| **low_24h** | REAL | Precio más bajo en las últimas 24h | `81,900.00` |
+| **price_change_24h** | REAL | Cambio de precio en USD en 24h | `+1,200.00` |
+| **price_change_pct_24h** | REAL | Cambio en porcentaje en 24h | `+1.4500` |
+| **circulating_supply** | REAL | Monedas en circulación actualmente | `19,600,000` |
+| **total_supply** | REAL | Cantidad máxima de monedas que existirán | `21,000,000` |
+| **ath** | REAL | All Time High: precio histórico más alto | `108,786.00` |
+| **last_updated** | TEXT | Fecha/hora de actualización en CoinGecko | `2026-03-01T10:00:00Z` |
+| **ingested_at** | TEXT | Fecha/hora en que el script guardó el dato | `2026-03-01T06:00:00Z` |
+
+> **Columna adicional (EA2):** `tier` — categoriza cada moneda como `Top 10`, `Top 50` o `Top 100` según su `market_cap_rank`.
+
+---
+
+## 👁️ Cómo ver los archivos generados
+
+### Base de datos SQLite
+1. Descarga `src/db/ingestion.db`
+2. Entra a 👉 **https://sqliteviewer.app** y arrastra el archivo
+
+### Excel limpio
+- Descarga `src/xlsx/cleaned_data.xlsx` y ábrelo con Excel o Google Sheets
+
+### Reportes de auditoría
+- `src/static/auditoria/ingestion.txt` — auditoría de ingesta (EA1)
+- `src/static/auditoria/cleaning_report.txt` — auditoría de limpieza (EA2)
 
 ---
 
@@ -68,51 +138,21 @@ Al terminar encontrarás los tres archivos de evidencia en sus respectivas carpe
 
 El workflow `.github/workflows/bigdata.yml` se ejecuta:
 
-- **En cada push** a la rama `main`
-- **Diariamente a las 06:00 UTC** (cron schedule)
-- **Manualmente** desde la pestaña *Actions* → *Run workflow*
+- **En cada push** a la rama `master`
+- **Diariamente a las 06:00 UTC**
+- **Manualmente** desde Actions → Run workflow
 
 ### Pasos del workflow
 
-1. Checkout del repositorio
-2. Configurar Python 3.11
-3. Instalar dependencias (`requests`, `pandas`, `openpyxl`)
-4. Ejecutar `src/ingestion.py`
-5. Verificar existencia y contenido de los archivos generados
-6. Publicar los archivos como **artefactos descargables** (30 días de retención)
-7. Hacer commit automático de los archivos actualizados al repositorio
-
-### Verificar la ejecución
-
-1. Ve a la pestaña **Actions** de tu repositorio.
-2. Selecciona el workflow *BigData - Ingesta CoinGecko*.
-3. Abre el último run y revisa los logs de cada step.
-4. Descarga los artefactos desde la sección *Artifacts* al final del run.
-
----
-
-## 🗄️ Esquema de la base de datos
-
-```sql
-CREATE TABLE coins (
-    id                   TEXT PRIMARY KEY,
-    symbol               TEXT,
-    name                 TEXT,
-    current_price        REAL,
-    market_cap           REAL,
-    market_cap_rank      INTEGER,
-    total_volume         REAL,
-    high_24h             REAL,
-    low_24h              REAL,
-    price_change_24h     REAL,
-    price_change_pct_24h REAL,
-    circulating_supply   REAL,
-    total_supply         REAL,
-    ath                  REAL,
-    last_updated         TEXT,
-    ingested_at          TEXT
-);
-```
+| Paso | Etapa | Descripción |
+|---|---|---|
+| Checkout + Python | Ambas | Configura el entorno |
+| Instalar dependencias EA1 | EA1 | requests, pandas, openpyxl |
+| Ejecutar ingestion.py | EA1 | Extrae datos y llena la BD |
+| Instalar Java + PySpark | EA2 | Prepara entorno Spark |
+| Ejecutar cleaning.py | EA2 | Limpia y transforma los datos |
+| Publicar artefactos | Ambas | Guarda los 5 archivos como descargables (30 días) |
+| Commit automático | Ambas | Sube archivos actualizados al repo |
 
 ---
 
@@ -120,7 +160,8 @@ CREATE TABLE coins (
 
 | Librería | Uso |
 |---|---|
-| `requests` | Conexión HTTP a la API de CoinGecko |
+| `requests` | Conexión HTTP a CoinGecko |
 | `sqlite3` | Almacenamiento local (incluida en Python) |
-| `pandas` | Generación del CSV de muestra y auditoría |
-| `openpyxl` | Soporte Excel (opcional) |
+| `pandas` | Exportación CSV/Excel y auditoría |
+| `pyspark` | Procesamiento distribuido (simula entorno cloud) |
+| `openpyxl` | Soporte formato Excel |

@@ -2,11 +2,10 @@ name: BigData - Ingesta CoinGecko
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   schedule:
-    # Ejecuta todos los días a las 06:00 UTC
     - cron: "0 6 * * *"
-  workflow_dispatch:   # permite ejecución manual desde GitHub
+  workflow_dispatch:
 
 jobs:
   ingest:
@@ -14,50 +13,63 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout del repositorio ────────────────────────────
       - name: Checkout código
         uses: actions/checkout@v4
 
-      # ── 2. Configurar Python ───────────────────────────────────
       - name: Configurar Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # ── 3. Instalar dependencias ───────────────────────────────
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
           pip install requests pandas openpyxl
 
-      # ── 4. Ejecutar script de ingesta ──────────────────────────
       - name: Ejecutar ingestion.py
         run: python src/ingestion.py
 
-      # ── 5. Verificar archivos generados ───────────────────────
-      - name: Verificar archivos generados
+      - name: Verificar archivos generados (EA1)
         run: |
           echo "── Base de datos ──"
           ls -lh src/db/
           echo "── CSV muestra ──"
           ls -lh src/xlsx/
-          echo "── Auditoría ──"
-          ls -lh src/static/auditoria/
-          echo "── Contenido auditoría ──"
+          echo "── Auditoría EA1 ──"
           cat src/static/auditoria/ingestion.txt
 
-      # ── 6. Publicar artefactos ─────────────────────────────────
+      # ── EA2: Preprocesamiento ──────────────────────────────────
+      - name: Instalar Java (requerido por PySpark)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Instalar dependencias EA2
+        run: pip install pyspark openpyxl
+
+      - name: Ejecutar cleaning.py
+        run: python src/cleaning.py
+
+      - name: Verificar archivos generados (EA2)
+        run: |
+          echo "── Excel limpio ──"
+          ls -lh src/xlsx/
+          echo "── Auditoría EA2 ──"
+          cat src/static/auditoria/cleaning_report.txt
+
       - name: Publicar artefactos
         uses: actions/upload-artifact@v4
         with:
-          name: evidencias-ingesta-${{ github.run_number }}
+          name: evidencias-${{ github.run_number }}
           path: |
             src/db/ingestion.db
             src/xlsx/muestra.csv
+            src/xlsx/cleaned_data.xlsx
             src/static/auditoria/ingestion.txt
+            src/static/auditoria/cleaning_report.txt
           retention-days: 30
 
-      # ── 7. Commit automático de evidencias al repo ─────────────
       - name: Commit archivos generados
         run: |
           git config user.name  "github-actions[bot]"
