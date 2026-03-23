@@ -1,0 +1,76 @@
+=================================================================
+     REPORTE DE AUDITORÍA — ENRIQUECIMIENTO EA3
+=================================================================
+Fecha/Hora UTC    : 2026-03-23 03:30:40
+Dataset base      : cleaned_data.csv / ingestion.db (EA2)
+
+── CONTEO DE REGISTROS ──────────────────────────────────
+  Registros base (EA2)     : 100
+  Registros enriquecidos   : 100
+  Columnas antes           : 17
+  Columnas después         : 39
+  Columnas nuevas añadidas : 22
+
+── FUENTES INTEGRADAS ───────────────────────────────────
+  JSON - Categorías
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 4
+
+  CSV  - Riesgo
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 4
+
+  XML  - Regulación
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 3
+
+  TXT  - Sentimiento
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 3
+
+  XLSX - Proyecto
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 4
+
+  HTML - Exchanges
+    Registros en fuente  : 20
+    Coincidentes (match) : 19
+    Columnas añadidas    : 4
+
+── TRANSFORMACIONES ADICIONALES ─────────────────────────
+  ✔ Columna 'investment_score' calculada:
+      = (1 - risk_score/10)*0.3 + sentiment_score*0.3
+        + github_commits_norm*0.2 + partnerships_norm*0.2
+
+── TOP 10 POR INVESTMENT SCORE ──────────────────────────
+  Ethereum             score=0.6920  sentiment=Positive  risk=4.1
+  Bitcoin              score=0.5800  sentiment=Positive  risk=3.2
+  BNB                  score=0.5790  sentiment=Positive  risk=5.2
+  Solana               score=0.5083  sentiment=Positive  risk=6.8
+  NEAR Protocol        score=0.4683  sentiment=Positive  risk=6.7
+  Chainlink            score=0.4680  sentiment=Positive  risk=6.2
+  Avalanche            score=0.4617  sentiment=Positive  risk=6.5
+  Uniswap              score=0.4550  sentiment=Positive  risk=6.4
+  Cardano              score=0.4427  sentiment=Positive  risk=5.8
+  Polkadot             score=0.3957  sentiment=Neutral  risk=6.0
+
+── DISTRIBUCIÓN POR SECTOR ──────────────────────────────
+  Platform            : 7 monedas
+  Currency            : 5 monedas
+  Payments            : 4 monedas
+  Exchange            : 1 monedas
+  Infrastructure      : 1 monedas
+  DeFi                : 1 monedas
+
+── DISTRIBUCIÓN POR SENTIMIENTO ─────────────────────────
+  Positive       : 12 monedas
+  Neutral        : 7 monedas
+
+=================================================================
+Fin del reporte.
+=================================================================
