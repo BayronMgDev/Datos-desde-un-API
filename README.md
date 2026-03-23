@@ -5,7 +5,7 @@ Fuente de datos principal: [CoinGecko API](https://www.coingecko.com/en/api) (p�
 
 ---
 
-## 📦 Etapas del proyecto
+##  Etapas del proyecto
 
 | Etapa | Descripción | Script |
 |---|---|---|
@@ -15,7 +15,7 @@ Fuente de datos principal: [CoinGecko API](https://www.coingecko.com/en/api) (p�
 
 ---
 
-## 🗂 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 meza_bayron/
@@ -50,7 +50,7 @@ meza_bayron/
 
 ---
 
-## ⚙️ Instalación y ejecución local
+##  Instalación y ejecución local
 
 ### 1. Clonar el repositorio
 ```bash
@@ -123,7 +123,7 @@ Genera:
 
 ---
 
-## 🗄️ Esquema de la base de datos — Tabla `coins`
+##  Esquema de la base de datos — Tabla `coins`
 
 | Columna | Tipo | Qué significa | Ejemplo |
 |---|---|---|---|
@@ -149,11 +149,11 @@ Genera:
 
 ---
 
-## 👁️ Cómo ver los archivos generados
+##  Cómo ver los archivos generados
 
 ### Base de datos SQLite
 1. Descarga `src/db/ingestion.db`
-2. Entra a 👉 **https://sqliteviewer.app** y arrastra el archivo
+2. Entra a  **https://sqliteviewer.app** y arrastra el archivo
 
 ### Archivos CSV (previsualización directa en GitHub)
 - `src/xlsx/muestra.csv` — top 20 monedas crudas
@@ -167,7 +167,7 @@ Genera:
 
 ---
 
-## 🤖 Automatización con GitHub Actions
+##  Automatización con GitHub Actions
 
 El workflow `.github/workflows/bigdata.yml` se ejecuta:
 
@@ -190,7 +190,7 @@ El workflow `.github/workflows/bigdata.yml` se ejecuta:
 
 ---
 
-## 📦 Dependencias
+##  Dependencias
 
 | Librería | Uso |
 |---|---|
