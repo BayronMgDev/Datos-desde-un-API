@@ -1,0 +1,22 @@
+[
+  {"id": "bitcoin",       "category": "Store of Value",  "sector": "Currency",    "consensus": "PoW", "founded_year": 2009},
+  {"id": "ethereum",      "category": "Smart Contract",  "sector": "Platform",    "consensus": "PoS", "founded_year": 2015},
+  {"id": "tether",        "category": "Stablecoin",      "sector": "Payments",    "consensus": "N/A", "founded_year": 2014},
+  {"id": "binancecoin",   "category": "Exchange Token",  "sector": "Exchange",    "consensus": "PoSA","founded_year": 2017},
+  {"id": "solana",        "category": "Smart Contract",  "sector": "Platform",    "consensus": "PoH", "founded_year": 2020},
+  {"id": "ripple",        "category": "Payment Protocol","sector": "Payments",    "consensus": "RPCA","founded_year": 2012},
+  {"id": "usd-coin",      "category": "Stablecoin",      "sector": "Payments",    "consensus": "N/A", "founded_year": 2018},
+  {"id": "staked-ether",  "category": "Liquid Staking",  "sector": "DeFi",        "consensus": "PoS", "founded_year": 2022},
+  {"id": "dogecoin",      "category": "Meme Coin",       "sector": "Currency",    "consensus": "PoW", "founded_year": 2013},
+  {"id": "cardano",       "category": "Smart Contract",  "sector": "Platform",    "consensus": "PoS", "founded_year": 2017},
+  {"id": "tron",          "category": "Smart Contract",  "sector": "Platform",    "consensus": "DPoS","founded_year": 2017},
+  {"id": "avalanche-2",   "category": "Smart Contract",  "sector": "Platform",    "consensus": "PoS", "founded_year": 2020},
+  {"id": "chainlink",     "category": "Oracle",          "sector": "Infrastructure","consensus": "N/A","founded_year": 2017},
+  {"id": "shiba-inu",     "category": "Meme Coin",       "sector": "Currency",    "consensus": "PoS", "founded_year": 2020},
+  {"id": "polkadot",      "category": "Interoperability","sector": "Platform",    "consensus": "NPoS","founded_year": 2020},
+  {"id": "litecoin",      "category": "Store of Value",  "sector": "Currency",    "consensus": "PoW", "founded_year": 2011},
+  {"id": "bitcoin-cash",  "category": "Store of Value",  "sector": "Currency",    "consensus": "PoW", "founded_year": 2017},
+  {"id": "uniswap",       "category": "DEX",             "sector": "DeFi",        "consensus": "N/A", "founded_year": 2018},
+  {"id": "stellar",       "category": "Payment Protocol","sector": "Payments",    "consensus": "SCP", "founded_year": 2014},
+  {"id": "near",          "category": "Smart Contract",  "sector": "Platform",    "consensus": "PoS", "founded_year": 2020}
+]

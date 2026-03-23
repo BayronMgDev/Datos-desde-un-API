@@ -1,0 +1,24 @@
+# Sentiment Data - Crypto Market
+# Format: id|sentiment_score|sentiment_label|social_mentions_24h
+# sentiment_score: -1.0 (very negative) to 1.0 (very positive)
+# Source: Simulated social media and news analysis
+bitcoin|0.72|Positive|95420
+ethereum|0.65|Positive|72310
+tether|0.10|Neutral|12500
+binancecoin|0.45|Positive|38900
+solana|0.58|Positive|45200
+ripple|0.30|Neutral|29800
+usd-coin|0.08|Neutral|8700
+staked-ether|0.60|Positive|15300
+dogecoin|0.55|Positive|88600
+cardano|0.40|Positive|31200
+tron|0.20|Neutral|18900
+avalanche-2|0.50|Positive|22400
+chainlink|0.48|Positive|19800
+shiba-inu|0.62|Positive|76500
+polkadot|0.38|Neutral|17600
+litecoin|0.42|Positive|14300
+bitcoin-cash|0.35|Neutral|11200
+uniswap|0.44|Positive|13700
+stellar|0.28|Neutral|10800
+near|0.52|Positive|16400

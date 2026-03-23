@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regulatory_data>
+  <coin id="bitcoin">      <legal_status>Legal</legal_status>      <regulated>Yes</regulated><main_exchange>NYSE</main_exchange></coin>
+  <coin id="ethereum">     <legal_status>Legal</legal_status>      <regulated>Yes</regulated><main_exchange>NASDAQ</main_exchange></coin>
+  <coin id="tether">       <legal_status>Legal</legal_status>      <regulated>Partial</regulated><main_exchange>OTC</main_exchange></coin>
+  <coin id="binancecoin">  <legal_status>Restricted</legal_status> <regulated>Partial</regulated><main_exchange>Binance</main_exchange></coin>
+  <coin id="solana">       <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>FTX</main_exchange></coin>
+  <coin id="ripple">       <legal_status>Disputed</legal_status>   <regulated>Partial</regulated><main_exchange>Ripple</main_exchange></coin>
+  <coin id="usd-coin">     <legal_status>Legal</legal_status>      <regulated>Yes</regulated><main_exchange>Coinbase</main_exchange></coin>
+  <coin id="staked-ether"> <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Lido</main_exchange></coin>
+  <coin id="dogecoin">     <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Robinhood</main_exchange></coin>
+  <coin id="cardano">      <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Kraken</main_exchange></coin>
+  <coin id="tron">         <legal_status>Restricted</legal_status> <regulated>Partial</regulated><main_exchange>Huobi</main_exchange></coin>
+  <coin id="avalanche-2">  <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Avalanche</main_exchange></coin>
+  <coin id="chainlink">    <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Coinbase</main_exchange></coin>
+  <coin id="shiba-inu">    <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Binance</main_exchange></coin>
+  <coin id="polkadot">     <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Kraken</main_exchange></coin>
+  <coin id="litecoin">     <legal_status>Legal</legal_status>      <regulated>Yes</regulated><main_exchange>Coinbase</main_exchange></coin>
+  <coin id="bitcoin-cash"> <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Kraken</main_exchange></coin>
+  <coin id="uniswap">      <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Uniswap</main_exchange></coin>
+  <coin id="stellar">      <legal_status>Legal</legal_status>      <regulated>Partial</regulated><main_exchange>Stellar</main_exchange></coin>
+  <coin id="near">         <legal_status>Legal</legal_status>      <regulated>No</regulated><main_exchange>Binance</main_exchange></coin>
+</regulatory_data>

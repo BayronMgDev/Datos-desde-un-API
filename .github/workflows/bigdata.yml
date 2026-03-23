@@ -24,40 +24,46 @@ jobs:
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install requests pandas openpyxl
+          pip install requests pandas openpyxl lxml
 
-      - name: Ejecutar ingestion.py
+      # ── EA1 ───────────────────────────────────────────────────
+      - name: Ejecutar ingestion.py (EA1)
         run: python src/ingestion.py
 
-      - name: Verificar archivos generados (EA1)
+      - name: Verificar archivos EA1
         run: |
-          echo "── Base de datos ──"
-          ls -lh src/db/
-          echo "── CSV muestra ──"
-          ls -lh src/xlsx/
-          echo "── Auditoría EA1 ──"
-          cat src/static/auditoria/ingestion.txt
+          echo "── BD ──"      && ls -lh src/db/
+          echo "── CSV ──"     && ls -lh src/xlsx/
+          echo "── Auditoría EA1 ──" && cat src/static/auditoria/ingestion.txt
 
-      # ── EA2: Preprocesamiento ──────────────────────────────────
-      - name: Instalar Java (requerido por PySpark)
+      # ── EA2 ───────────────────────────────────────────────────
+      - name: Instalar Java (PySpark)
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
 
       - name: Instalar dependencias EA2
-        run: pip install pyspark openpyxl
+        run: pip install pyspark
 
-      - name: Ejecutar cleaning.py
+      - name: Ejecutar cleaning.py (EA2)
         run: python src/cleaning.py
 
-      - name: Verificar archivos generados (EA2)
+      - name: Verificar archivos EA2
         run: |
-          echo "── Excel limpio ──"
-          ls -lh src/xlsx/
-          echo "── Auditoría EA2 ──"
-          cat src/static/auditoria/cleaning_report.txt
+          echo "── CSV limpio ──" && ls -lh src/xlsx/
+          echo "── Auditoría EA2 ──" && cat src/static/auditoria/cleaning_report.txt
 
+      # ── EA3 ───────────────────────────────────────────────────
+      - name: Ejecutar enrichment.py (EA3)
+        run: python src/enrichment.py
+
+      - name: Verificar archivos EA3
+        run: |
+          echo "── CSV enriquecido ──" && ls -lh src/xlsx/
+          echo "── Auditoría EA3 ──"   && cat src/static/auditoria/enrichment_report.txt
+
+      # ── Artefactos ────────────────────────────────────────────
       - name: Publicar artefactos
         uses: actions/upload-artifact@v4
         with:
@@ -65,9 +71,11 @@ jobs:
           path: |
             src/db/ingestion.db
             src/xlsx/muestra.csv
-            src/xlsx/cleaned_data.xlsx
+            src/xlsx/cleaned_data.csv
+            src/xlsx/enriched_data.csv
             src/static/auditoria/ingestion.txt
             src/static/auditoria/cleaning_report.txt
+            src/static/auditoria/enrichment_report.txt
           retention-days: 30
 
       - name: Commit archivos generados
@@ -75,5 +83,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/db/ src/xlsx/ src/static/
-          git diff --staged --quiet || git commit -m "ci: actualización automática de evidencias [run #${{ github.run_number }}]"
+          git diff --staged --quiet || git commit -m "ci: evidencias EA1+EA2+EA3 [run #${{ github.run_number }}]"
           git push
