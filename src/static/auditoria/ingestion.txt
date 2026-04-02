@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-04-01 07:09:15
+Fecha/Hora UTC  : 2026-04-02 07:01:23
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -18,8 +18,8 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  1  Bitcoin              id=bitcoin
   #  2  Ethereum             id=ethereum
   #  3  Tether               id=tether
-  #  4  BNB                  id=binancecoin
-  #  5  XRP                  id=ripple
+  #  4  XRP                  id=ripple
+  #  5  BNB                  id=binancecoin
   #  6  USDC                 id=usd-coin
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
