@@ -1,12 +1,12 @@
 =================================================================
      REPORTE DE AUDITORÍA — ENRIQUECIMIENTO EA3
 =================================================================
-Fecha/Hora UTC    : 2026-04-14 07:19:31
+Fecha/Hora UTC    : 2026-04-15 07:20:13
 Dataset base      : cleaned_data.csv / ingestion.db (EA2)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
-  Registros base (EA2)     : 106
-  Registros enriquecidos   : 106
+  Registros base (EA2)     : 107
+  Registros enriquecidos   : 107
   Columnas antes           : 17
   Columnas después         : 39
   Columnas nuevas añadidas : 22
