@@ -1,12 +1,12 @@
 =================================================================
      REPORTE DE AUDITORÍA — PREPROCESAMIENTO EA2
 =================================================================
-Fecha/Hora UTC      : 2026-04-16 07:20:37
+Fecha/Hora UTC      : 2026-04-17 07:21:11
 Fuente              : src/db/ingestion.db (entorno cloud simulado)
 Motor de procesamiento: PySpark (local) + Pandas
 
 ── ESTADO INICIAL (antes de limpieza) ──────────────────────
-  Registros totales  : 107
+  Registros totales  : 108
   Columnas           : 16
   Duplicados         : 0
   Total nulos        : 0
@@ -25,37 +25,37 @@ Motor de procesamiento: PySpark (local) + Pandas
   ✔ Registros con precio <= 0 eliminados: 0
 
 ── ESTADO FINAL (después de limpieza) ──────────────────────
-  Registros limpios  : 107
+  Registros limpios  : 108
   Columnas finales   : 17
   Reducción          : 0 registros eliminados
 
 ── DISTRIBUCIÓN POR TIER ────────────────────────────────────
-  Top 100     : 57 monedas
+  Top 100     : 58 monedas
   Top 50      : 40 monedas
   Top 10      : 10 monedas
 
 ── TOP 10 MONEDAS LIMPIAS ───────────────────────────────────
-  #  1  Bitcoin               $     74,936.00  [Top 10]
-  #  2  Ethereum              $      2,354.30  [Top 10]
+  #  1  Bitcoin               $     74,992.00  [Top 10]
+  #  2  Ethereum              $      2,338.13  [Top 10]
   #  3  Tether                $          1.00  [Top 10]
-  #  4  XRP                   $          1.41  [Top 10]
-  #  5  BNB                   $        624.77  [Top 10]
+  #  4  XRP                   $          1.43  [Top 10]
+  #  5  BNB                   $        629.25  [Top 10]
   #  6  USDC                  $          1.00  [Top 10]
-  #  7  Solana                $         85.58  [Top 10]
+  #  7  Solana                $         88.26  [Top 10]
   #  8  TRON                  $          0.33  [Top 10]
   #  9  Figure Heloc          $          1.03  [Top 10]
   # 10  Dogecoin              $          0.10  [Top 10]
 
 ── ESTADÍSTICAS NUMÉRICAS (datos limpios) ───────────────────
        current_price    market_cap  total_volume  price_change_pct_24h            ath
-count     107.000000  1.070000e+02  1.070000e+02            107.000000     107.000000
-mean      839.581929  2.395930e+10  1.495004e+09              2.299594    1475.155931
-std      7263.716055  1.482192e+11  7.706154e+09              3.099813   12201.563031
-min         0.000002  4.869687e+08  0.000000e+00             -3.650900       0.000004
-25%         0.166093  7.539320e+08  1.122862e+07              0.013800       1.016000
-50%         0.999919  1.616351e+09  5.322241e+07              1.751100       2.860000
-75%         8.595000  4.105694e+09  1.976389e+08              3.875900      48.810000
-max     74936.000000  1.499728e+12  6.609231e+10             16.195500  126080.000000
+count     108.000000  1.080000e+02  1.080000e+02            108.000000     108.000000
+mean      831.714112  2.384507e+10  1.664560e+09              2.808996    1461.515024
+std      7235.085192  1.477926e+11  8.560036e+09             14.611624   12145.239890
+min         0.000002  4.869687e+08  0.000000e+00             -9.259100       0.000004
+25%         0.177512  8.185285e+08  1.186506e+07             -0.012975       1.007750
+50%         0.999957  1.577166e+09  6.029243e+07              0.190500       2.635000
+75%         8.625000  4.130100e+09  2.053396e+08              1.654150      46.865000
+max     74992.000000  1.502590e+12  7.582831e+10            145.236600  126080.000000
 
 =================================================================
 Fin del reporte.
