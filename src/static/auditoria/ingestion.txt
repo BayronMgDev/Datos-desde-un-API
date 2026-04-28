@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-04-27 08:06:01
+Fecha/Hora UTC  : 2026-04-28 08:08:00
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 9
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : ylds, layerzero, dash, siren-2, fetch-ai, a7a5, river, ravedao, true-usd
+  ⚠️  IDs solo en BD  : ravedao, fetch-ai, pancakeswap-token, true-usd, dash, river, layerzero, siren-2, a7a5
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
