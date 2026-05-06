@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-05-04 08:18:13
+Fecha/Hora UTC  : 2026-05-06 08:08:44
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 111
+  Almacenados en BD   : 112
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 11
+  Solo en BD          : 12
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : true-usd, layerzero, a7a5, megausd, dexe, midnight-3, official-trump, ylds, ravedao, river
+  ⚠️  IDs solo en BD  : midnight-3, layerzero, pancakeswap-token, ravedao, a7a5, fetch-ai, megausd, true-usd, ylds, dexe
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
@@ -23,8 +23,8 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  6  USDC                 id=usd-coin
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
-  #  9  Figure Heloc         id=figure-heloc
-  # 10  Dogecoin             id=dogecoin
+  #  9  Dogecoin             id=dogecoin
+  # 10  Figure Heloc         id=figure-heloc
 
 ============================================================
 Fin del reporte.
