@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-05-22 08:49:16
+Fecha/Hora UTC  : 2026-05-23 08:05:59
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 118
+  Almacenados en BD   : 119
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 18
+  Solo en BD          : 19
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : official-trump, skyai, siren-2, pancakeswap-token, layerzero, fetch-ai, river, a7a5, billions-network, unibase
+  ⚠️  IDs solo en BD  : ylds, terra-luna, unibase, build-on, river, official-trump, pancakeswap-token, ravedao, kite-2, skyai
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
