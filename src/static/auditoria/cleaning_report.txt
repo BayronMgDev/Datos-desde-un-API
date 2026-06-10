@@ -1,12 +1,12 @@
 =================================================================
      REPORTE DE AUDITORÍA — PREPROCESAMIENTO EA2
 =================================================================
-Fecha/Hora UTC      : 2026-06-09 09:24:32
+Fecha/Hora UTC      : 2026-06-10 09:41:23
 Fuente              : src/db/ingestion.db (entorno cloud simulado)
 Motor de procesamiento: PySpark (local) + Pandas
 
 ── ESTADO INICIAL (antes de limpieza) ──────────────────────
-  Registros totales  : 124
+  Registros totales  : 125
   Columnas           : 16
   Duplicados         : 0
   Total nulos        : 0
@@ -25,37 +25,37 @@ Motor de procesamiento: PySpark (local) + Pandas
   ✔ Registros con precio <= 0 eliminados: 0
 
 ── ESTADO FINAL (después de limpieza) ──────────────────────
-  Registros limpios  : 124
+  Registros limpios  : 125
   Columnas finales   : 17
   Reducción          : 0 registros eliminados
 
 ── DISTRIBUCIÓN POR TIER ────────────────────────────────────
-  Top 100     : 73 monedas
+  Top 100     : 74 monedas
   Top 50      : 41 monedas
   Top 10      : 10 monedas
 
 ── TOP 10 MONEDAS LIMPIAS ───────────────────────────────────
-  #  1  Bitcoin               $     62,880.00  [Top 10]
-  #  2  Ethereum              $      1,678.75  [Top 10]
+  #  1  Bitcoin               $     61,263.00  [Top 10]
+  #  2  Ethereum              $      1,619.94  [Top 10]
   #  3  Tether                $          1.00  [Top 10]
-  #  4  BNB                   $        603.10  [Top 10]
+  #  4  BNB                   $        584.58  [Top 10]
   #  5  USDC                  $          1.00  [Top 10]
-  #  6  XRP                   $          1.17  [Top 10]
-  #  7  Solana                $         66.77  [Top 10]
+  #  6  XRP                   $          1.11  [Top 10]
+  #  7  Solana                $         63.49  [Top 10]
   #  8  TRON                  $          0.32  [Top 10]
   #  9  Figure Heloc          $          1.03  [Top 10]
-  # 10  Hyperliquid           $         62.59  [Top 10]
+  # 10  Dogecoin              $          0.08  [Top 10]
 
 ── ESTADÍSTICAS NUMÉRICAS (datos limpios) ───────────────────
        current_price    market_cap  total_volume  price_change_pct_24h            ath
-count     124.000000  1.240000e+02  1.240000e+02            124.000000     124.000000
-mean      612.361687  1.786450e+10  1.182193e+09              0.965531    1275.258416
-std      5665.678808  1.156798e+11  6.369751e+09              6.330989   11338.218819
-min         0.000002  4.941173e+08  0.000000e+00            -16.512200       0.000004
-25%         0.192529  6.110859e+08  1.280006e+07             -0.461850       0.894375
-50%         0.999675  1.261960e+09  5.273087e+07              0.009400       2.265000
-75%         5.917500  3.090263e+09  1.672263e+08              1.219325      43.870000
-max     62880.000000  1.260106e+12  5.842483e+10             49.003500  126080.000000
+count     125.000000  1.250000e+02  1.250000e+02            125.000000     125.000000
+mean      590.726053  1.728787e+10  1.107934e+09             -0.293310    1265.068884
+std      5497.528896  1.122737e+11  6.098915e+09              8.003549   11292.982281
+min         0.000002  4.941173e+08  0.000000e+00            -36.771500       0.000004
+25%         0.183571  6.066335e+08  1.276585e+07             -2.745000       0.895319
+50%         0.999557  1.238417e+09  4.602874e+07             -0.499100       2.140000
+75%         5.440000  2.942313e+09  1.606532e+08              0.009800      43.840000
+max     61263.000000  1.227572e+12  5.553122e+10             49.003500  126080.000000
 
 =================================================================
 Fin del reporte.
