@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-06-14 09:18:57
+Fecha/Hora UTC  : 2026-06-15 11:46:14
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,19 +12,19 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 27
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : injective-protocol, official-trump, dash, fetch-ai, pudgy-penguins, pancakeswap-token, vechain, velvet, bonk, ousg
+  ⚠️  IDs solo en BD  : fetch-ai, a7a5, ousg, velvet, megausd, usx, river, layerzero, ravedao, pudgy-penguins
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
   #  2  Ethereum             id=ethereum
   #  3  Tether               id=tether
   #  4  BNB                  id=binancecoin
-  #  5  USDC                 id=usd-coin
-  #  6  XRP                  id=ripple
+  #  5  XRP                  id=ripple
+  #  6  USDC                 id=usd-coin
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
   #  9  Figure Heloc         id=figure-heloc
-  # 10  Dogecoin             id=dogecoin
+  # 10  Hyperliquid          id=hyperliquid
 
 ============================================================
 Fin del reporte.
