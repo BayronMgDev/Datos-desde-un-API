@@ -1,12 +1,12 @@
 =================================================================
      REPORTE DE AUDITORÍA — PREPROCESAMIENTO EA2
 =================================================================
-Fecha/Hora UTC      : 2026-06-16 10:55:13
+Fecha/Hora UTC      : 2026-06-17 10:26:59
 Fuente              : src/db/ingestion.db (entorno cloud simulado)
 Motor de procesamiento: PySpark (local) + Pandas
 
 ── ESTADO INICIAL (antes de limpieza) ──────────────────────
-  Registros totales  : 127
+  Registros totales  : 128
   Columnas           : 16
   Duplicados         : 0
   Total nulos        : 0
@@ -25,37 +25,37 @@ Motor de procesamiento: PySpark (local) + Pandas
   ✔ Registros con precio <= 0 eliminados: 0
 
 ── ESTADO FINAL (después de limpieza) ──────────────────────
-  Registros limpios  : 127
+  Registros limpios  : 128
   Columnas finales   : 17
   Reducción          : 0 registros eliminados
 
 ── DISTRIBUCIÓN POR TIER ────────────────────────────────────
-  Top 100     : 76 monedas
+  Top 100     : 77 monedas
   Top 50      : 41 monedas
   Top 10      : 10 monedas
 
 ── TOP 10 MONEDAS LIMPIAS ───────────────────────────────────
-  #  1  Bitcoin               $     66,536.00  [Top 10]
-  #  2  Ethereum              $      1,795.30  [Top 10]
+  #  1  Bitcoin               $     64,875.00  [Top 10]
+  #  2  Ethereum              $      1,771.17  [Top 10]
   #  3  Tether                $          1.00  [Top 10]
-  #  4  BNB                   $        613.78  [Top 10]
-  #  5  XRP                   $          1.24  [Top 10]
-  #  6  USDC                  $          1.00  [Top 10]
-  #  7  Solana                $         74.92  [Top 10]
+  #  4  BNB                   $        601.92  [Top 10]
+  #  5  USDC                  $          1.00  [Top 10]
+  #  6  XRP                   $          1.20  [Top 10]
+  #  7  Solana                $         72.45  [Top 10]
   #  8  TRON                  $          0.32  [Top 10]
   #  9  Figure Heloc          $          1.03  [Top 10]
-  # 10  Hyperliquid           $         75.42  [Top 10]
+  # 10  Hyperliquid           $         72.73  [Top 10]
 
 ── ESTADÍSTICAS NUMÉRICAS (datos limpios) ───────────────────
        current_price    market_cap  total_volume  price_change_pct_24h            ath
-count     127.000000  1.270000e+02  1.270000e+02            127.000000     127.000000
-mean      629.429785  1.831390e+10  1.267088e+09              2.542354    1245.212831
-std      5921.723188  1.208886e+11  6.836061e+09             13.529330   11204.105389
-min         0.000002  4.941173e+08  0.000000e+00            -36.771500       0.000004
-25%         0.220976  6.347958e+08  1.268939e+07             -0.052900       0.947659
-50%         0.999722  1.162004e+09  5.139257e+07              0.156500       2.000000
-75%         4.615000  3.258894e+09  1.960619e+08              3.093800      38.110000
-max     66536.000000  1.333875e+12  6.628095e+10            123.109500  126080.000000
+count     128.000000  1.280000e+02  1.280000e+02            128.000000     128.000000
+mean      610.561496  1.782306e+10  9.324729e+08              0.335887    1235.503512
+std      5752.279260  1.175032e+11  4.920456e+09             14.020087   11160.448239
+min         0.000002  4.941173e+08  0.000000e+00            -40.941500       0.000004
+25%         0.219242  6.058664e+08  9.613850e+06             -2.246725       0.973830
+50%         0.999708  1.149185e+09  5.017906e+07             -0.288200       1.915000
+75%         4.087500  3.094566e+09  1.599952e+08              0.039375      35.245000
+max     64875.000000  1.300603e+12  4.697554e+10            123.109500  126080.000000
 
 =================================================================
 Fin del reporte.
