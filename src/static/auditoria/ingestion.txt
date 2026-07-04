@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-07-03 08:49:25
+Fecha/Hora UTC  : 2026-07-04 08:24:08
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 31
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : billions-network, lighter, apxusd, usx, injective-protocol, ousg, kite-2, a7a5, terra-luna, bonk
+  ⚠️  IDs solo en BD  : injective-protocol, midnight-3, virtual-protocol, velvet, pudgy-penguins, apxusd, vechain, hash-2, fetch-ai, terra-luna
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
