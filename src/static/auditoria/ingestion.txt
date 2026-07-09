@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-07-08 08:08:17
+Fecha/Hora UTC  : 2026-07-09 09:21:32
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 132
+  Almacenados en BD   : 159
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 32
+  Solo en BD          : 59
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : river, arbitrum, official-trump, unibase, fetch-ai, humanity, velvet, skyai, venice-token, terra-luna
+  ⚠️  IDs solo en BD  : sky, hedera-hashgraph, htx-dao, whitebit, megausd, ravedao, billions-network, hashnote-usyc, stable-2, siren-2
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
@@ -24,7 +24,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
   #  9  Figure Heloc         id=figure-heloc
-  # 10  Hyperliquid          id=hyperliquid
+  #  9  Hyperliquid          id=hyperliquid
 
 ============================================================
 Fin del reporte.
