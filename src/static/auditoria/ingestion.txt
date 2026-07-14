@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-07-13 08:49:34
+Fecha/Hora UTC  : 2026-07-14 07:47:23
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 59
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : aerodrome-finance, true-usd, ravedao, spiko-us-t-bills-money-market-fund, syrup, unibase, billions-network, iota, a7a5, midnight-3
+  ⚠️  IDs solo en BD  : onyc, usx, lab, vechain, tezos, monad, pancakeswap-token, aptos, aerodrome-finance, iota
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
