@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-07-26 08:08:41
+Fecha/Hora UTC  : 2026-07-27 09:31:55
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
-  Extraídos del API   : 100
+  Extraídos del API   : 0
   Almacenados en BD   : 160
-  En común (API ∩ BD) : 100
+  En común (API ∩ BD) : 0
   Solo en API         : 0
-  Solo en BD          : 60
+  Solo en BD          : 160
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : ether-fi, crvusd, tezos, adi-token, onyc, aerodrome-finance, dexe, billions-network, injective-protocol, usa
+  ⚠️  IDs solo en BD  : vechain, janus-henderson-anemoy-treasury-fund, pancakeswap-token, dai, ethena, gho, kaspa, beldex, dexe, okb
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
