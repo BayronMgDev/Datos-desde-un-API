@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-08-02 08:05:46
+Fecha/Hora UTC  : 2026-08-03 09:22:00
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 61
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : lab, kite-2, aptos, chiliz, river, midnight-3, celestia, virtual-protocol, fetch-ai, edgex
+  ⚠️  IDs solo en BD  : adi-token, chiliz, virtual-protocol, usdtb, peanut-2-2, river, dexe, unibase, dash, plasma
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
