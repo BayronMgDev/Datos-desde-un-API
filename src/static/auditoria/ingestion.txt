@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-08-06 08:15:25
+Fecha/Hora UTC  : 2026-08-07 06:59:55
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 61
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : monad, hastra-prime, aerodrome-finance, virtual-protocol, akash-network, plasma, onyc, dash, iota, curve-dao-token
+  ⚠️  IDs solo en BD  : edgex, usa, pudgy-penguins, plasma, hastra-prime, ethereum-name-service, akash-network, build-on, layerzero, tradable-apac-diversified-finance-provider-sstn
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
