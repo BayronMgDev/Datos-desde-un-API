@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-08-08 06:34:49
+Fecha/Hora UTC  : 2026-08-09 06:38:31
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 61
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : siren-2, euro-coin, hastra-prime, pancakeswap-token, tradable-na-rent-financing-platform-sstn, ethereum-name-service, usa, nexus-4, kite-2, decred
+  ⚠️  IDs solo en BD  : iota, official-trump, ravedao, floki, euro-coin, midnight-3, bonk, onyc, decred, automatic-treasury-machine
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
