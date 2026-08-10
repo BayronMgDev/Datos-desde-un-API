@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-08-09 06:38:31
+Fecha/Hora UTC  : 2026-08-10 07:10:51
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 161
+  Almacenados en BD   : 162
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 61
+  Solo en BD          : 62
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : iota, official-trump, ravedao, floki, euro-coin, midnight-3, bonk, onyc, decred, automatic-treasury-machine
+  ⚠️  IDs solo en BD  : usdtb, siren-2, hash-2, ravedao, ousg, spiko-us-t-bills-money-market-fund, ethereum-name-service, dexe, syrup, decred
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
