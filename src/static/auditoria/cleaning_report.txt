@@ -1,7 +1,7 @@
 =================================================================
      REPORTE DE AUDITORÍA — PREPROCESAMIENTO EA2
 =================================================================
-Fecha/Hora UTC      : 2026-08-28 17:54:43
+Fecha/Hora UTC      : 2026-08-29 11:59:00
 Fuente              : src/db/ingestion.db (entorno cloud simulado)
 Motor de procesamiento: PySpark (local) + Pandas
 
@@ -30,32 +30,32 @@ Motor de procesamiento: PySpark (local) + Pandas
   Reducción          : 0 registros eliminados
 
 ── DISTRIBUCIÓN POR TIER ────────────────────────────────────
-  Top 100     : 112 monedas
+  Top 100     : 111 monedas
   Top 50      : 41 monedas
-  Top 10      : 10 monedas
+  Top 10      : 11 monedas
 
 ── TOP 10 MONEDAS LIMPIAS ───────────────────────────────────
-  #  1  Bitcoin               $     77,930.00  [Top 10]
-  #  2  Ethereum              $      2,444.59  [Top 10]
+  #  1  Bitcoin               $     77,631.00  [Top 10]
+  #  2  Ethereum              $      2,436.10  [Top 10]
   #  3  Tether                $          1.00  [Top 10]
-  #  4  BNB                   $        694.80  [Top 10]
-  #  5  XRP                   $          1.39  [Top 10]
+  #  4  BNB                   $        689.26  [Top 10]
+  #  5  XRP                   $          1.38  [Top 10]
   #  6  USDC                  $          1.00  [Top 10]
-  #  7  Solana                $        104.88  [Top 10]
+  #  7  Solana                $        103.64  [Top 10]
   #  8  TRON                  $          0.34  [Top 10]
   #  9  Figure Heloc          $          1.04  [Top 10]
-  # 10  Hyperliquid           $         81.29  [Top 10]
+  #  9  Hyperliquid           $         81.22  [Top 10]
 
 ── ESTADÍSTICAS NUMÉRICAS (datos limpios) ───────────────────
        current_price    market_cap  total_volume  price_change_pct_24h           ath
 count     163.000000  1.630000e+02  1.630000e+02          1.630000e+02  1.630000e+02
-mean      569.866946  1.655182e+10  1.056233e+09          2.008999e+05  1.163553e+06
-std      6120.022320  1.255512e+11  6.231164e+09          2.564924e+06  1.484271e+07
+mean      567.745262  1.649322e+10  8.223987e+08          2.009004e+05  1.163553e+06
+std      6096.554053  1.250519e+11  4.840742e+09          2.564924e+06  1.484271e+07
 min         0.000002  1.625000e+08  0.000000e+00         -5.886390e+01  3.750000e-06
-25%         0.170978  5.126564e+08  6.407728e+06         -4.022900e+00  9.471010e-01
-50%         0.999411  8.335903e+08  3.716535e+07         -5.657000e-01  1.670000e+00
-75%         2.175000  2.290178e+09  1.533591e+08          2.760000e-02  2.398000e+01
-max     77930.000000  1.564911e+12  6.608064e+10          3.274676e+07  1.895000e+08
+25%         0.168928  5.108576e+08  5.913814e+06         -3.196650e+00  9.471010e-01
+50%         0.999589  8.296923e+08  3.182436e+07         -1.974000e-01  1.670000e+00
+75%         2.210000  2.324522e+09  1.269165e+08          2.275000e-01  2.398000e+01
+max     77631.000000  1.558602e+12  5.165788e+10          3.274676e+07  1.895000e+08
 
 =================================================================
 Fin del reporte.
