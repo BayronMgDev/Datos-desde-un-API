@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-09-09 10:24:44
+Fecha/Hora UTC  : 2026-09-10 10:15:55
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 64
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : spiko-us-t-bills-money-market-fund, crvusd, monad, usdtb, unibase, pudgy-penguins, velvet, bitcoin-cash-sv, ylds, virtual-protocol
+  ⚠️  IDs solo en BD  : automatic-treasury-machine, ousg, layerzero, euro-coin, humanity, tradable-na-rent-financing-platform-sstn, zebec-network, plasma, lab, nexus-4
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
@@ -24,7 +24,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
   #  9  Figure Heloc         id=figure-heloc
-  #  9  Zcash                id=zcash
+  # 10  Zcash                id=zcash
 
 ============================================================
 Fin del reporte.
