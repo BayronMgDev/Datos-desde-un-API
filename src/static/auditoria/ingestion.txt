@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-09-15 10:41:49
+Fecha/Hora UTC  : 2026-09-16 10:30:13
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 164
+  Almacenados en BD   : 165
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 64
+  Solo en BD          : 65
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : midnight-3, build-on, ylds, a7a5, pudgy-penguins, tezos, usa, talus, floki, celestia
+  ⚠️  IDs solo en BD  : decred, floki, spiko-us-t-bills-money-market-fund, iota, ethereum-name-service, dexe, billions-network, skyai, siren-2, hash-2
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
@@ -24,7 +24,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
   #  9  Figure Heloc         id=figure-heloc
-  #  9  Zcash                id=zcash
+  # 10  Zcash                id=zcash
 
 ============================================================
 Fin del reporte.
