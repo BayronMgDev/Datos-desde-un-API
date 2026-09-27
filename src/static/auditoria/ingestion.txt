@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-09-26 10:31:01
+Fecha/Hora UTC  : 2026-09-27 11:02:31
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 167
+  Almacenados en BD   : 168
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 67
+  Solo en BD          : 68
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : velvet, bitcoin-cash-sv, kite-2, true-usd, beldex, decred, plasma, syrup, onyc, humanity
+  ⚠️  IDs solo en BD  : syrup, bitcoin-cash-sv, build-on, megausd, terra-luna, crvusd, lab, a7a5, midnight-3, zebec-network
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
