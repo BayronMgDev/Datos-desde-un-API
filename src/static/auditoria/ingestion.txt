@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-09-27 11:02:31
+Fecha/Hora UTC  : 2026-09-28 12:22:53
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 68
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : syrup, bitcoin-cash-sv, build-on, megausd, terra-luna, crvusd, lab, a7a5, midnight-3, zebec-network
+  ⚠️  IDs solo en BD  : usdtb, euro-coin, beldex, pons, fetch-ai, build-on, chiliz, syrup, edgex, bianrensheng
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
