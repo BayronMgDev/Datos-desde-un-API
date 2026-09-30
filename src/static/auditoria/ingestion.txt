@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-09-28 12:22:53
+Fecha/Hora UTC  : 2026-09-30 11:35:38
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 68
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : usdtb, euro-coin, beldex, pons, fetch-ai, build-on, chiliz, syrup, edgex, bianrensheng
+  ⚠️  IDs solo en BD  : ethereum-name-service, bianrensheng, zebec-network, nexus-4, true-usd, chiliz, blockstack, billions-network, iota, beldex
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
