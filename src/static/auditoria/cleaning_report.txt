@@ -1,12 +1,12 @@
 =================================================================
      REPORTE DE AUDITORÍA — PREPROCESAMIENTO EA2
 =================================================================
-Fecha/Hora UTC      : 2026-10-03 10:50:21
+Fecha/Hora UTC      : 2026-10-04 11:32:34
 Fuente              : src/db/ingestion.db (entorno cloud simulado)
 Motor de procesamiento: PySpark (local) + Pandas
 
 ── ESTADO INICIAL (antes de limpieza) ──────────────────────
-  Registros totales  : 168
+  Registros totales  : 169
   Columnas           : 16
   Duplicados         : 0
   Total nulos        : 0
@@ -25,37 +25,37 @@ Motor de procesamiento: PySpark (local) + Pandas
   ✔ Registros con precio <= 0 eliminados: 0
 
 ── ESTADO FINAL (después de limpieza) ──────────────────────
-  Registros limpios  : 168
+  Registros limpios  : 169
   Columnas finales   : 17
   Reducción          : 0 registros eliminados
 
 ── DISTRIBUCIÓN POR TIER ────────────────────────────────────
-  Top 100     : 117 monedas
+  Top 100     : 118 monedas
   Top 50      : 41 monedas
   Top 10      : 10 monedas
 
 ── TOP 10 MONEDAS LIMPIAS ───────────────────────────────────
-  #  1  Bitcoin               $     84,600.00  [Top 10]
-  #  2  Ethereum              $      2,683.00  [Top 10]
+  #  1  Bitcoin               $     85,298.00  [Top 10]
+  #  2  Ethereum              $      2,703.34  [Top 10]
   #  3  Tether                $          1.00  [Top 10]
-  #  4  BNB                   $        768.20  [Top 10]
-  #  5  XRP                   $          1.48  [Top 10]
+  #  4  BNB                   $        788.63  [Top 10]
+  #  5  XRP                   $          1.50  [Top 10]
   #  6  USDC                  $          1.00  [Top 10]
-  #  7  Solana                $        119.47  [Top 10]
+  #  7  Solana                $        121.43  [Top 10]
   #  8  TRON                  $          0.34  [Top 10]
-  #  9  Figure Heloc          $          1.04  [Top 10]
-  # 10  Zcash                 $      1,315.16  [Top 10]
+  #  9  Figure Heloc          $          1.07  [Top 10]
+  # 10  Zcash                 $      1,334.95  [Top 10]
 
 ── ESTADÍSTICAS NUMÉRICAS (datos limpios) ───────────────────
        current_price    market_cap  total_volume  price_change_pct_24h           ath
-count     168.000000  1.680000e+02  1.680000e+02          1.680000e+02  1.680000e+02
-mean      597.112335  1.754884e+10  9.156771e+08          1.949229e+05  1.128924e+06
-std      6539.500763  1.343092e+11  5.554786e+09          2.526467e+06  1.462017e+07
+count     169.000000  1.690000e+02  1.690000e+02          1.690000e+02  1.690000e+02
+mean      598.268608  1.759402e+10  4.339785e+08          1.937707e+05  1.122244e+06
+std      6573.746688  1.350143e+11  2.551021e+09          2.518981e+06  1.457685e+07
 min         0.000002  1.625000e+08  0.000000e+00         -5.886390e+01  3.750000e-06
-25%         0.211057  5.482719e+08  6.242355e+06         -2.344500e+00  9.518260e-01
-50%         0.999387  8.911283e+08  4.315502e+07         -1.160000e-02  1.635000e+00
-75%         2.250000  2.633739e+09  1.712848e+08          5.515500e-01  2.198250e+01
-max     84600.000000  1.699815e+12  6.061972e+10          3.274676e+07  1.895000e+08
+25%         0.216453  5.486523e+08  5.118011e+06         -1.090000e-02  9.710340e-01
+50%         0.999460  9.057053e+08  3.202950e+07          2.603000e-01  1.650000e+00
+75%         2.170000  2.791762e+09  9.488906e+07          1.977200e+00  2.085000e+01
+max     85298.000000  1.713845e+12  2.860099e+10          3.274676e+07  1.895000e+08
 
 =================================================================
 Fin del reporte.
