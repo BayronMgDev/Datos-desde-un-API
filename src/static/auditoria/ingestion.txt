@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-06 12:26:13
+Fecha/Hora UTC  : 2026-10-07 12:19:15
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 69
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : unibase, peanut-2-2, bitcoin-cash-sv, plasma, marscat-token, usual-usd, kite-2, apxusd, siren-2, virtual-protocol
+  ⚠️  IDs solo en BD  : marscat-token, ravedao, bonk, onyc, siren-2, kite-2, flare-networks, usx, pons, crvusd
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
