@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-09 12:17:45
+Fecha/Hora UTC  : 2026-10-10 11:35:42
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 70
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : terra-luna, siren-2, edgex, janus-henderson-anemoy-aaa-clo-fund, euro-coin, usa, eutbl, tezos, chiliz, official-trump
+  ⚠️  IDs solo en BD  : ethereum-name-service, siren-2, usx, zebec-network, euro-coin, lab, flare-networks, talus, billions-network, nexus-4
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
