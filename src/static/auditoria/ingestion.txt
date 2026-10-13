@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-12 13:54:40
+Fecha/Hora UTC  : 2026-10-13 13:11:29
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 71
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : spx6900, true-usd, usdtb, tradable-apac-diversified-finance-provider-sstn, adi-token, fetch-ai, bonk, dash, dexe, janus-henderson-anemoy-treasury-fund
+  ⚠️  IDs solo en BD  : ousg, janus-henderson-anemoy-aaa-clo-fund, bonk, velvet, spiko-us-t-bills-money-market-fund, siren-2, syrup, river, pudgy-penguins, crvusd
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
