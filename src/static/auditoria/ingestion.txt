@@ -1,18 +1,18 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-13 13:11:29
+Fecha/Hora UTC  : 2026-10-14 10:51:48
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
   Extraídos del API   : 100
-  Almacenados en BD   : 171
+  Almacenados en BD   : 172
   En común (API ∩ BD) : 100
   Solo en API         : 0
-  Solo en BD          : 71
+  Solo en BD          : 72
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : ousg, janus-henderson-anemoy-aaa-clo-fund, bonk, velvet, spiko-us-t-bills-money-market-fund, siren-2, syrup, river, pudgy-penguins, crvusd
+  ⚠️  IDs solo en BD  : audiera, bitcoin-cash-sv, usual-usd, raydium, lab, adi-token, unibase, iota, velvet, monad
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
