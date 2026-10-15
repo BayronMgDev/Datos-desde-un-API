@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-14 10:51:48
+Fecha/Hora UTC  : 2026-10-15 10:34:00
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 72
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : audiera, bitcoin-cash-sv, usual-usd, raydium, lab, adi-token, unibase, iota, velvet, monad
+  ⚠️  IDs solo en BD  : spx6900, iota, automatic-treasury-machine, pons, ethereum-name-service, janus-henderson-anemoy-treasury-fund, river, ether-fi, starknet, peanut-2-2
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
