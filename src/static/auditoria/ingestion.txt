@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-10-25 10:24:22
+Fecha/Hora UTC  : 2026-10-26 11:53:14
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 72
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : apxusd, ousg, kite-2, onyc, iota, floki, virtual-protocol, raydium, spiko-us-t-bills-money-market-fund, dexe
+  ⚠️  IDs solo en BD  : skyai, celestia, usa, decred, ethereum-name-service, aerodrome-finance, kite-2, hash-2, audiera, bianrensheng
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
