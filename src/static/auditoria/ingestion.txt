@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-11-01 12:19:57
+Fecha/Hora UTC  : 2026-11-02 14:13:53
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 72
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : true-usd, unibase, kite-2, ousg, velvet, akedo, flare-networks, virtual-protocol, curve-dao-token, pons
+  ⚠️  IDs solo en BD  : crvusd, aerodrome-finance, official-trump, monad, fetch-ai, pudgy-penguins, spx6900, flare-networks, bianrensheng, audiera
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
@@ -24,7 +24,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   #  7  Solana               id=solana
   #  8  TRON                 id=tron
   #  9  Figure Heloc         id=figure-heloc
-  # 10  Hyperliquid          id=hyperliquid
+  # 10  Zcash                id=zcash
 
 ============================================================
 Fin del reporte.
