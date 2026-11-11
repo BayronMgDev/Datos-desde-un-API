@@ -1,7 +1,7 @@
 =================================================================
      REPORTE DE AUDITORÍA — ENRIQUECIMIENTO EA3
 =================================================================
-Fecha/Hora UTC    : 2026-11-10 13:58:41
+Fecha/Hora UTC    : 2026-11-11 13:14:11
 Dataset base      : cleaned_data.csv / ingestion.db (EA2)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
