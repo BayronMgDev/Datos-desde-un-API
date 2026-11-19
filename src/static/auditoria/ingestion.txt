@@ -1,7 +1,7 @@
 ============================================================
        REPORTE DE AUDITORÍA — INGESTA COINGECKO
 ============================================================
-Fecha/Hora UTC  : 2026-11-18 14:48:22
+Fecha/Hora UTC  : 2026-11-19 14:55:07
 Fuente          : CoinGecko /coins/markets (top 100 por market cap)
 
 ── CONTEO DE REGISTROS ──────────────────────────────────
@@ -12,7 +12,7 @@ Fuente          : CoinGecko /coins/markets (top 100 por market cap)
   Solo en BD          : 73
 
 ── INTEGRIDAD ───────────────────────────────────────────
-  ⚠️  IDs solo en BD  : tradable-apac-diversified-finance-provider-sstn, monad, fetch-ai, plasma, crvusd, terra-luna, unibase, conflux-token, kite-2, spiko-us-t-bills-money-market-fund
+  ⚠️  IDs solo en BD  : zebec-network, floki, marscat-token, pudgy-penguins, aerodrome-finance, peanut-2-2, lab, velvet, billions-network, vechain
 
 ── TOP 10 POR MARKET CAP (BD) ───────────────────────────
   #  1  Bitcoin              id=bitcoin
